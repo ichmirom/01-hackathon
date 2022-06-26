@@ -41,6 +41,7 @@ export class ClicksModule extends Module {
     }
 
     clickOnButton(event) {
+        console.log(event)
         event.preventDefault()
         let value = Number(this.timeForClick.value)
         if (value !== 0 && !isNaN(value)) {
