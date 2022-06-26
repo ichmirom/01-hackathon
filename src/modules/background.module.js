@@ -1,5 +1,5 @@
 import {Module} from '../core/module'
-import {getRandomColor, random} from "../utils";
+import {getRandomColor} from "../utils";
 
 export class BackgroundModule extends Module {
     constructor(type, text) {

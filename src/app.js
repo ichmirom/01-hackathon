@@ -1,12 +1,21 @@
 import './styles.css'
-import {ContextMenu} from "./menu";
-import {BackgroundModule} from "./modules/background.module";
-import {SoundModule} from "./modules/sound.module";
-import {FigureModule} from "./modules/figure.module";
-import {TicTacToeModule} from "./modules/tic-tac-toe.module";
+import { ContextMenu } from "./menu";
+import { BackgroundModule } from "./modules/background.module";
+import { SoundModule } from "./modules/sound.module";
+import { FigureModule } from "./modules/figure.module";
+import { TicTacToeModule } from "./modules/tic-tac-toe.module";
 import { TimerModule } from "./modules/timer.module";
 import { Messages } from './modules/messages.module';
-import {ClicksModule} from "./modules/clicks.module";
+import { ClicksModule } from "./modules/clicks.module";
+
+const startBlock = document.querySelector('.start-block')
+if (startBlock) {
+    const startBlockText = document.querySelector('.start-block__text')
+    setTimeout(() => {
+        startBlockText.style.opacity = '1'
+        startBlockText.style.fontSize = '40px'
+    }, 0)
+}
 
 const contextMenu = new ContextMenu('#menu')
 

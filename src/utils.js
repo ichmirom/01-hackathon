@@ -5,7 +5,7 @@ export function random(min, max) {
 export const getRandomColor = () => {
   const letters = 'ABCDEF1234567890'
   let color = '#'
-  for(let i = 0; i < 6; i++) {
+  for (let i = 0; i < 6; i++) {
     color += letters[Math.floor(Math.random() * 16)]
   }
 
@@ -29,12 +29,12 @@ export const getPosition = (event) => {
   const clientWidth = html.clientWidth
   const clientHeight = html.clientHeight
 
-  if(event.pageX + menuWidth > clientWidth) {
+  if (event.pageX + menuWidth > clientWidth) {
     return {
       x: clientWidth - menuWidth,
       y: event.pageY
     }
-  } else if(event.pageY + menuHeight > clientHeight) {
+  } else if (event.pageY + menuHeight > clientHeight) {
     return {
       x: event.pageX,
       y: clientHeight - menuHeight
@@ -58,11 +58,9 @@ export const getRandomPositionForElement = (elementWidth, elementHeight) => {
 }
 
 export const deleteStartInterface = () => {
-  if(document.querySelector('.start-block')) {
-    const startBlock = document.querySelector('.start-block')
-    setTimeout(() => {
-      startBlock.style.opacity = '0'
-    }, 1000)
+  const startBlock = document.querySelector('.start-block')
+  if (startBlock) {
+    const startBlockText = document.querySelector('.start-block__text')
     startBlock.remove()
   }
 }

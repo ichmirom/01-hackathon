@@ -113,12 +113,9 @@ export class TicTacToeModule extends Module {
     }
 
     trigger() {
+        this.#resetGame();
         this.#isGameContinues = true;
-        while (this.#area.el.firstChild) {
-            this.#area.el.removeChild(this.#area.el.firstChild)
-        }
         this.#messageBox.textContent = '';
-        this.#showArea();
         this.#area.el.addEventListener('click', (event) => {
             if (event.target.className === 'tic-tac-toe-area-box') {
                 if (this.#isGameContinues === true) {
