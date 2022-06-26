@@ -7,6 +7,8 @@ export class BackgroundModule extends Module {
     }
 
     trigger() {
-        document.body.style.backgroundImage = `linear-gradient(${random(0, 360)}deg, ${getRandomColor()}, ${getRandomColor()})`
+        document.body.style.background = `linear-gradient(45deg, ${getRandomColor()}, ${getRandomColor()})`
+        document.body.style.backgroundSize = '400% 400%'
+        document.body.style.animation = 'gradient 7s ease infinite'
     }
 }

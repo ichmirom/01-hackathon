@@ -1,5 +1,6 @@
 import {Menu} from './core/menu'
 import {getPosition} from "./utils";
+import {deleteStartInterface} from "./utils";
 
 export class ContextMenu extends Menu {
     #addedModules
@@ -29,6 +30,7 @@ export class ContextMenu extends Menu {
 
     #showMenu() {
         document.body.addEventListener('contextmenu', (event) => {
+            deleteStartInterface()
             event.preventDefault()
             this.open()
         })
