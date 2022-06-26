@@ -100,9 +100,14 @@ body {
 }
 .close__btn {
   background-color: rgba(244, 32, 32, 0.5);
+  transition: 0.5s;
 }
 .start__btn {
   background-color: rgba(46, 244, 32, 0.5);
+  transition: 0.5s;
+}
+.close__btn:hover, .start__btn:hover{
+  opacity: 0.5;
 }
 .timer > .close__btn {
   position: relative;

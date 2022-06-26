@@ -2,8 +2,8 @@ import { Module } from "../core/module";
 
 export class TimerModule extends Module {
   #id;
-  constructor(text) {
-    super("timer", text);
+  constructor(type, text) {
+    super(type, text);
     this.timerContainer = document.createElement("div");
     this.timerContainer.className = "timer__container";
     this.#id = 0;
