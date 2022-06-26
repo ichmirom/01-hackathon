@@ -12,7 +12,7 @@ export class SoundModule extends Module {
 
     trigger() {
         this.#currentSound.pause()
-        this.#currentSound.src = `../src/sounds/sound${random(1, 15)}.mp3`
+        this.#currentSound.src = `../src/assets/sounds/sound${random(1, 15)}.mp3`
         this.#currentSound.play()
     }
 }
