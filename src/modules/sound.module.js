@@ -1,14 +1,16 @@
 import {Module} from "../core/module";
-import sound1 from '../sounds/sound1.mp3'
+import {random} from "../utils";
 
 export class SoundModule extends Module {
     constructor(type, text) {
         super(type, text)
+        this.currentSound = new Audio()
+        this.currentSound.volume = 0.3
     }
 
     trigger() {
-        const audio = new Audio()
-        audio.src = sound1
-        audio.play()
+        this.currentSound.pause()
+        this.currentSound.src = `../src/sounds/sound${random(1, 15)}.mp3`
+        this.currentSound.play()
     }
 }
