@@ -1,42 +1,113 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-size: 14px;
-    font-family: 'Roboto', sans-serif;
-    height: 100vh;
-    width: 100%;
-    padding: 2rem;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  width: 100%;
+  padding: 2rem;
 }
 
 .menu {
-    position: fixed;
-    z-index: 1000;
-    width: 150px;
-    background: #1b1a1a;
-    border-radius: 5px;
-    display: none;
-    list-style: none;
+  position: fixed;
+  z-index: 1000;
+  width: 150px;
+  background: #1b1a1a;
+  border-radius: 5px;
+  display: none;
+  list-style: none;
 }
 
 .menu.open {
-    display: block;
+  display: block;
 }
 
 .menu .menu-item {
-    padding: 8px 10px;
-    font-size: 1rem;
-    color: #eee;
-    cursor: pointer;
-    transition: background-color .2s ease-in;
-    border-radius: inherit;
+  padding: 8px 10px;
+  font-size: 1rem;
+  color: #eee;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+  border-radius: inherit;
 }
 
 .menu .menu-item:hover {
-    background: #343434;
+  background: #343434;
+}
+
+.timer__container {
+  max-width: 450px;
+}
+.timer {
+  text-align: center;
+  position: relative;
+  display: flex;
+  padding: 0 0 10px 0;
+  justify-content: space-between;
+}
+.timer-input-hours,
+.timer-input-mins,
+.timer-input-secs {
+  width: 70px;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  margin-right: 10px;
+  outline: none;
+  box-shadow: 1px 1px 1px 1px black;
+  font-family: inherit;
+}
+
+.timer__item div {
+  box-shadow: 1px 1px 1px 1px rgb(172, 172, 172);
+  border-radius: 3px;
+  margin-right: 15px;
+  padding: 5px;
+  width: 70px;
+  background-color: rgb(255, 255, 255);
+}
+.timer__item {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+}
+.btn__container {
+  width: 150px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.btn {
+  cursor: pointer;
+  border: solid 1px #343434;
+  width: 65px;
+  height: 30px;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 10px;
+}
+.close__btn {
+  background-color: rgba(244, 32, 32, 0.5);
+}
+.start__btn {
+  background-color: rgba(46, 244, 32, 0.5);
+}
+.timer > .close__btn {
+  position: relative;
+  right: 7px;
+}
+.timer-off {
+  font-size: 18px;
 }
