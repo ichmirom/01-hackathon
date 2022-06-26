@@ -56,3 +56,13 @@ export const getRandomPositionForElement = (elementWidth, elementHeight) => {
     y: random(0, clientHeight - elementHeight),
   }
 }
+
+export const deleteStartInterface = () => {
+  if(document.querySelector('.start-block')) {
+    const startBlock = document.querySelector('.start-block')
+    setTimeout(() => {
+      startBlock.style.opacity = '0'
+    }, 1000)
+    startBlock.remove()
+  }
+}
