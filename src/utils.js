@@ -13,26 +13,37 @@ export const getRandomColor = () => {
 }
 
 export const getPosition = (event) => {
-  let posX = 0;
-  let posY = 0;
-
   if (!event) {
     event = window.event
   }
 
-  if (event.pageX || event.pageY) {
-    posX = event.pageX;
-    posY = event.pageY;
-  } else if (event.clientX || event.clientY) {
-    posX = event.clientX + document.body.scrollLeft +
-        document.documentElement.scrollLeft;
-    posY = event.clientY + document.body.scrollTop +
-        document.documentElement.scrollTop;
-  }
+  const html = document.querySelector("html");
+  const menu = document.querySelector('#menu')
 
-  return {
-    x: posX,
-    y: posY
+  let menuWidth = window.getComputedStyle(menu).getPropertyValue("width")
+  let menuHeight = window.getComputedStyle(menu).getPropertyValue("height")
+
+  menuWidth = Number(menuWidth.split('').slice(0, menuWidth.length - 2).join(''))
+  menuHeight = Number(menuHeight.split('').slice(0, menuHeight.length - 2).join(''))
+
+  const clientWidth = html.clientWidth
+  const clientHeight = html.clientHeight
+
+  if(event.pageX + menuWidth > clientWidth) {
+    return {
+      x: clientWidth - menuWidth,
+      y: event.pageY
+    }
+  } else if(event.pageY + menuHeight > clientHeight) {
+    return {
+      x: event.pageX,
+      y: clientHeight - menuHeight
+    }
+  } else {
+    return {
+      x: event.pageX,
+      y: event.pageY
+    }
   }
 }
 
@@ -43,5 +54,15 @@ export const getRandomPositionForElement = (elementWidth, elementHeight) => {
   return {
     x: random(0, clientWidth - elementWidth),
     y: random(0, clientHeight - elementHeight),
+  }
+}
+
+export const deleteStartInterface = () => {
+  if(document.querySelector('.start-block')) {
+    const startBlock = document.querySelector('.start-block')
+    setTimeout(() => {
+      startBlock.style.opacity = '0'
+    }, 1000)
+    startBlock.remove()
   }
 }
